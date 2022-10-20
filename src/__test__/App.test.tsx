@@ -59,13 +59,23 @@ describe("Listar Cliente", () => {
     expect(tabelaClientes).toBeInTheDocument();
   });
 
-  test("A tabela deve iniciar com uma linha no thead e vazia no tbody", () => {
+  test("deve iniciar a tabela com uma linha no thead e vazia no tbody", () => {
     render(<Clientes />, { wrapper: BrowserRouter });
     const tabelaClientes = screen.getByTestId("tabela-clientes");
 
     expect(tabelaClientes.childElementCount).toBe(2); // table
     expect(tabelaClientes.children[0].childElementCount).toBe(1); // child[0] -> thead
     expect(tabelaClientes.children[1].childElementCount).toBe(0); // child[1] -> tbody
+  });
+
+  test("deve ser possível acessar e clicar no botão de atualizar lista", () => {
+    render(<Clientes />, { wrapper: BrowserRouter });
+    const atualizarListaBtn = screen.getByTestId<HTMLButtonElement>("atualizarListaBtn");
+    const atualizarListaSpy = jest.spyOn(handlers, "updateList");
+
+    fireEvent.click(atualizarListaBtn);
+
+    expect(atualizarListaSpy).toHaveBeenCalled();
   });
 });
 
