@@ -105,34 +105,6 @@ describe("Remover Cliente", () => {
     expect(removerBtn).toBeInTheDocument();
   });
 
-  test("deve ser possível visualizar os dados do cliente no formulário", () => {
-    render(
-      <Form
-        nome="nome1"
-        idade="20"
-        email="nome1@gmail.com"
-        cpf="123.456.789-01"
-        telefone="(22) 00000-0000"
-        estado="rj"
-        bairro="bairro1"
-        cidade="cidade1"
-        rua="rua1"
-        numero="1"
-        cep="11111-111"
-        editar
-        id="fakeId123"
-      />,
-      { wrapper: BrowserRouter }
-    );
-    const nomeInput = screen.getByTestId<HTMLInputElement>("nomeInput");
-    const estadoSelect = screen.getByTestId<HTMLSelectElement>("slEstado");
-
-    expect(nomeInput).toBeInTheDocument();
-    expect(nomeInput.value).toBe("nome1");
-    expect(estadoSelect).toBeInTheDocument();
-    expect(estadoSelect.value).toBe("rj");
-  });
-
   test("deve ser possível chamar a função de remover cliente ao clicar no botão", () => {
     render(
       <Form
@@ -182,9 +154,12 @@ describe("Editar Cliente", () => {
       { wrapper: BrowserRouter }
     );
     const nomeInput = screen.getByTestId<HTMLInputElement>("nomeInput");
+    const estadoSelect = screen.getByTestId<HTMLSelectElement>("slEstado");
 
     expect(nomeInput).toBeInTheDocument();
     expect(nomeInput.value).toBe("nome1");
+    expect(estadoSelect).toBeInTheDocument();
+    expect(estadoSelect.value).toBe("rj");
   });
 
   test("deve ser possível acessar o botão Editar no formulário", () => {
