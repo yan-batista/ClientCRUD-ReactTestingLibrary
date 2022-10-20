@@ -1,7 +1,22 @@
-# Build the main branch
+stages:
+  - build
+  - test
+
 build-staging:
   stage: build
   script:
+    - echo "Inciando a build do projeto:"
     - npm install
-    - npm run test
     - npm run build
+
+test-staging:
+  stage: test
+  script:
+    - echo "Build feita com sucesso. Inciando testes:"
+    - npm run test
+
+test-staging:
+  stage: deploy
+  script:
+    - echo "Build feita com sucesso. Inciando testes:"
+    - firebase deploy --only hosting
