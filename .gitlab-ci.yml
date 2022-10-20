@@ -16,8 +16,8 @@ test-staging:
     - echo "Build feita com sucesso. Inciando testes:"
     - npm run test
 
-test-staging:
+deploy-staging:
   stage: deploy
   script:
-    - echo "Build feita com sucesso. Inciando testes:"
+    - echo "Testes finalizados com sucesso. Iniciando deploy:"
     - firebase deploy --only hosting
