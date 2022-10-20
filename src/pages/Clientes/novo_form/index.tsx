@@ -56,7 +56,8 @@ export default function NovoCliente(props: any) {
   return (
     <div className="container">
       <div className="form-container">
-        <h1>Novo Cliente</h1>
+        {!props.editar && <h1>Novo Cliente</h1>}
+        {props.editar && <h1>Editar Cliente</h1>}
         <form className="cadastro_cliente_form" data-testid="form">
           <div>
             <label>Nome:</label>
