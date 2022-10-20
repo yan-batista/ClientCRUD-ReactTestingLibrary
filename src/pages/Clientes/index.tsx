@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../../firebase-config";
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-import { updateList, removeCliente } from "./handlers";
+import { updateList } from "./handlers";
 import "./style.css";
 
 export default function Clientes() {

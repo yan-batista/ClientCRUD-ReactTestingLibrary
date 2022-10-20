@@ -47,6 +47,12 @@ export default function NovoCliente(props: any) {
     navigate("/clientes");
   };
 
+  const removeClienteHandler = async (event: any) => {
+    event.preventDefault();
+    removeCliente(props.id);
+    navigate("/clientes");
+  };
+
   return (
     <div className="container">
       <div className="form-container">
@@ -253,9 +259,8 @@ export default function NovoCliente(props: any) {
               <button
                 className="btn red removerBtn"
                 data-testid="removerBtn"
-                onClick={() => {
-                  removeCliente(props.id);
-                  navigate("/clientes");
+                onClick={(event) => {
+                  removeClienteHandler(event);
                 }}
               >
                 Remover
