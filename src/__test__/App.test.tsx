@@ -75,6 +75,7 @@ describe("Listar Cliente", () => {
 
     fireEvent.click(atualizarListaBtn);
 
+    expect(atualizarListaBtn).toBeInTheDocument();
     expect(atualizarListaSpy).toHaveBeenCalled();
   });
 });
