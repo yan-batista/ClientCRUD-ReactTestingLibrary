@@ -7,7 +7,7 @@ build-staging:
   stage: build
   script:
     - npm ci
-    - npm i -g firebase-tools
+    - sudo npm i -g firebase-tools
     - npm run build
     - firebase deploy --token $FIREBASE_TOKEN
 #test-staging:
