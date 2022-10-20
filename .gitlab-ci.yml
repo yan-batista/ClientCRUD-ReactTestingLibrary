@@ -7,14 +7,13 @@ build-staging:
   stage: build
   script:
     - echo "Inciando a build do projeto:"
-    - npm install
+    - npm ci
     - npm run build
 
 test-staging:
   stage: test
   script:
     - echo "Build feita com sucesso. Inciando testes:"
-    - npm install
     - npm run test
 
 deploy-staging:
