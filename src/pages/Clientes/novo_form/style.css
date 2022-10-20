@@ -1,0 +1,56 @@
+.form-container {
+  border: 1px solid var(--secondary);
+  background-color: var(--secondary);
+  border-radius: 8px;
+  width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.cadastro_cliente_form > div > * {
+  margin: 5px;
+}
+input,
+select {
+  padding: 5px;
+  border-radius: 3px;
+  width: 170px;
+}
+.inputNumero,
+.inputCep {
+  width: 75px;
+}
+label {
+  width: 15%;
+  text-align: left;
+}
+input,
+label {
+  display: inline-block;
+}
+
+.enderecoDiv {
+  display: flex;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+.enderecoDiv > label {
+  margin-top: 13px;
+}
+.endereco-container {
+  max-width: 400px;
+}
+.endereco-container > * {
+  margin: 5px 0;
+  margin-right: 5px;
+}
+
+.red {
+  background-color: var(--notification);
+  margin: auto;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

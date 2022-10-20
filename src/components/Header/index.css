@@ -1,0 +1,55 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.headerBar {
+  background-color: var(--secondary);
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  background-color: var(--notification);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 8px;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+}
+
+.navbar {
+  list-style-type: none;
+  height: 100%;
+}
+
+.navbar > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+}
+.navbar > li > a:hover {
+  background-color: var(--discord);
+}
+
+.active,
+.active:hover {
+  background-color: var(--discord);
+}
+
+.navbar > li > .disabled,
+.navbar > li > .disabled:hover {
+  font-style: italic;
+  background-color: transparent;
+  cursor: default;
+  color: #cecece;
+  pointer-events: none;
+}

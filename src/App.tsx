@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Dependências
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+// Components
+import Header from "./components/Header";
+
+// Pages
+import Home from "./pages/Home/index";
+import Clientes from "./pages/Clientes/index";
+import NovoClienteForm from "./pages/Clientes/novo_form/index";
+import EditarClienteForm from "./pages/Clientes/editar_form/index";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />}>
+          <Route index element={<Home />} />
+          <Route path="clientes" element={<Clientes />} />
+          <Route path="clientes/novo" element={<NovoClienteForm />} />
+          <Route path="clientes/editar/:id" element={<EditarClienteForm />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

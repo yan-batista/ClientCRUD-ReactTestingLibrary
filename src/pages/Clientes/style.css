@@ -1,0 +1,39 @@
+.users-table {
+  border-collapse: collapse;
+  text-align: center;
+}
+.users-table th,
+.users-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.users-table th {
+  border-color: var(--discord);
+}
+
+.users-table tr {
+  background-color: var(--white);
+  color: black;
+}
+
+.users-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.users-table tr:hover {
+  background-color: #ddd;
+}
+
+.users-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: var(--discord);
+  color: white;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

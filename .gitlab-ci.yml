@@ -1,0 +1,7 @@
+# Build the main branch
+build-staging:
+  stage: build
+  script:
+    - npm install
+    - npm run test
+    - npm run build
