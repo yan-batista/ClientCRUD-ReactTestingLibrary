@@ -20,4 +20,4 @@ deploy-staging:
   script:
     - npm ci
     - npm i -g firebase-tools
-    - firebase deploy --only hosting --token $FIREBASE_TOKEN
+    - firebase deploy --token $FIREBASE_TOKEN
