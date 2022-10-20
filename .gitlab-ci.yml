@@ -7,17 +7,17 @@ build-staging:
   stage: build
   script:
     - npm ci
-    - npm run build
-
-test-staging:
-  stage: test
-  script:
-    - npm ci
-    - npm run test
-
-deploy-staging:
-  stage: deploy
-  script:
-    - npm ci
     - npm i -g firebase-tools
+    - npm run build
     - firebase deploy --token $FIREBASE_TOKEN
+#test-staging:
+#  stage: test
+#  script:
+#    - npm ci
+#    - npm run test
+#deploy-staging:
+#  stage: deploy
+#  script:
+#    - npm ci
+#    - npm i -g firebase-tools
+#    - firebase deploy --token $FIREBASE_TOKEN
