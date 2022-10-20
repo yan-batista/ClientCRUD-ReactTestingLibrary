@@ -14,10 +14,12 @@ test-staging:
   stage: test
   script:
     - echo "Build feita com sucesso. Inciando testes:"
+    - npm ci
     - npm run test
 
 deploy-staging:
   stage: deploy
   script:
     - echo "Testes finalizados com sucesso. Iniciando deploy:"
+    - npm ci
     - firebase deploy --only hosting
