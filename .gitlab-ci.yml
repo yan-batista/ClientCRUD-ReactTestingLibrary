@@ -3,10 +3,6 @@ stages:
   - test
   - deploy
 
-cache:
-  paths:
-    - node_modules/
-
 build-staging:
   stage: build
   script:
@@ -23,4 +19,5 @@ deploy-staging:
   stage: deploy
   script:
     - npm ci
+    - npm i -g firebase-tools
     - firebase deploy --only hosting --token $FIREBASE_TOKEN
