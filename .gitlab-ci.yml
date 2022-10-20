@@ -14,6 +14,7 @@ test-staging:
   stage: test
   script:
     - echo "Build feita com sucesso. Inciando testes:"
+    - npm install
     - npm run test
 
 deploy-staging:
